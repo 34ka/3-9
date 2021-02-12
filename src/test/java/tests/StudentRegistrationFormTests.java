@@ -28,6 +28,9 @@ public class StudentRegistrationFormTests {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         //открываем браузер в максимальном разрешении
         Configuration.startMaximized = true;
+        //Configuration.browserCapabilities = capabilities;
+        Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+        //        Configuration.browser = FIREFOX;
     }
 
     @AfterEach
