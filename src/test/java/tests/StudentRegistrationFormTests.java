@@ -22,33 +22,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelper.*;
 import static io.qameta.allure.Allure.step;
 
-public class StudentRegistrationFormTests {
-
-    @BeforeAll
-    static void setup() {
-        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
-        Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
-        //открываем браузер в максимальном разрешении
-        Configuration.startMaximized = true;
-        //        Configuration.browser = FIREFOX;
-    }
-
-    @AfterEach
-    @Step("Attachments")
-    public void afterEach(){
-        attachScreenshot("Last screenshot");
-        attachPageSource();
-        attachAsText("Browser console logs", getConsoleLogs());
-        attachVideo();
-
-        closeWebDriver();
-    }
+public class StudentRegistrationFormTests  extends TestBase {
 
     @Test
     @DisplayName("Successful fill registration form")
