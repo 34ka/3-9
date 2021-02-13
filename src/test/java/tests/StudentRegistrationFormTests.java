@@ -1,16 +1,11 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
 import com.github.javafaker.service.FakeValuesService;
 import com.github.javafaker.service.RandomService;
-import io.qameta.allure.Step;
-import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
 
 import java.io.File;
 import java.util.Locale;
@@ -18,8 +13,7 @@ import java.util.Locale;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.AttachmentsHelper.*;
+
 import static io.qameta.allure.Allure.step;
 
 public class StudentRegistrationFormTests  extends TestBase {
